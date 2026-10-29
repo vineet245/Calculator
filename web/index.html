@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="जोड़ और घटाव के लिए एक सरल ऑनलाइन कैलकुलेटर।">
+  <title>Simple Calculator — जोड़ और घटाव</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><a href="/" class="brand"><span class="brand-icon" aria-hidden="true">±</span> Simple Calculator</a><span class="tag">जोड़ · घटाव</span></header>
+  <main>
+    <div class="intro"><span class="eyebrow">छोटी गणनाएँ, आसानी से</span><h1>बस दो संख्याएँ।<br><span>जवाब सामने।</span></h1><p>रोज़मर्रा के जोड़ और घटाव के लिए आपका सरल कैलकुलेटर।</p></div>
+    <section class="calculator" aria-label="कैलकुलेटर">
+      <form id="calculator-form">
+        <fieldset class="operations"><legend>क्या करना है?</legend><div class="operation-options">
+          <label><input type="radio" name="operation" value="add" checked><span><b aria-hidden="true">+</b> जोड़</span></label>
+          <label><input type="radio" name="operation" value="subtract"><span><b aria-hidden="true">−</b> घटाव</span></label>
+        </div></fieldset>
+        <div class="numbers">
+          <div class="field"><label for="first">पहली संख्या</label><input id="first" name="first" type="text" inputmode="decimal" placeholder="जैसे 125.50" autocomplete="off" maxlength="64" required></div>
+          <span id="operation-symbol" class="between" aria-hidden="true">+</span>
+          <div class="field"><label for="second">दूसरी संख्या</label><input id="second" name="second" type="text" inputmode="decimal" placeholder="जैसे 24.50" autocomplete="off" maxlength="64" required></div>
+        </div>
+        <p class="hint">दशमलव और ऋणात्मक संख्याएँ भी डाल सकते हैं।</p>
+        <div class="actions"><button id="calculate" type="submit">गणना करें <span aria-hidden="true">↗</span></button><button class="reset" type="reset">साफ़ करें</button></div>
+        <p id="error" class="error" role="alert" hidden></p>
+      </form>
+      <div class="result" role="status" aria-live="polite" aria-atomic="true"><span class="result-label">आपका परिणाम</span><p id="expression" class="expression">गणना करने के बाद उत्तर यहाँ दिखेगा</p><output id="result">—</output></div>
+    </section>
+    <p class="footnote">सरल शुरुआत। सही गणना।</p>
+  </main>
+  <footer>Simple Calculator <span>01 / जोड़ और घटाव</span></footer>
+</body>
+</html>
